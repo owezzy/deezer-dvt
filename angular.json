@@ -67,7 +67,11 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
           "configurations": {
+
             "production": {
               "browserTarget": "dezzer-dvt:build:production"
             },
@@ -80,8 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "dezzer-dvt:build"
-          }
+            "browserTarget": "dezzer-dvt:build"}
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",

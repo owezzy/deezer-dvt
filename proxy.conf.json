@@ -1,0 +1,20 @@
+{
+  "/api/*": {
+    "target": "https://api.deezer.com",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "warn",
+    "pathRewrite": {
+      "^/api": ""
+    }
+  },
+  "/api/*": {
+    "target": "http://localhost:4200",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}
