@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  Deezer_API:'https://api.deezer.com'
+  Deezer_API:'https://api.deezer.com',
+  Deezer_AP2:'https://localhost:4200'
 };
 
 /*

@@ -1,31 +1,33 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {environment} from "../environments/environment";
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiDataService {
+  urlCors = "https://cors-anywhere.herokuapp.com/";
 
   constructor(
-  private httpClient: HttpClient
+    private httpClient: HttpClient
+  ) {
+  }
 
-  ) { }
-
-  searchArtists(name: string):Observable<any>{
-
-    return this.httpClient.get(`${environment.Deezer_API}/search?q=${name}`,{
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*/*',
-        'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-      }),
+  searchArtists(name: string): Observable<any> {
+    const searchArtist = environment.Deezer_API
+    return this.httpClient.get(`${searchArtist}/search?q=${name}`, {
       withCredentials: true
-      // params: getHttpParams(params),
+    })
+  }
 
-      }
-    )
+  searchMusic(str: string, type = 'artist'): Observable<any[]> {
+    const searchUrl = this.urlCors+`https://api.deezer.com/search?q=${str}&offset=0&limit=10&type=${type}`;
+    return this.httpClient.get(searchUrl).pipe(map((res: any) => <any[]>res.data));
+  }
 
+  getArtist(id: string): Observable<any> {
+    const artistUrl = this.urlCors + `https://api.deezer.com/artist/${id}`;
+    return this.httpClient.get(artistUrl).pipe(map(res => <any> res));
   }
 }

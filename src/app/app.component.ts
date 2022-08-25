@@ -11,6 +11,8 @@ export class AppComponent implements OnInit{
   title = 'dezzer-dvt';
 
   search$ : Observable<any>;
+  searchArtist$ : Observable<any>;
+  artist$ : Observable<any>;
 
   constructor(
     public dataService: ApiDataService
@@ -21,5 +23,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     this.search$ = this.dataService.searchArtists('jayz')
+    // this.searchArtist$ = this.dataService.searchMusic('jayz')
+    this.artist$ = this.dataService.getArtist('123')
   }
 }
