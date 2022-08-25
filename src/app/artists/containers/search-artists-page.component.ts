@@ -4,6 +4,7 @@ import {Store} from "@ngrx/store";
 import * as fromArtists from '../reducers';
 import {take} from "rxjs/operators";
 import {SearchArtistPageActions} from "../actions";
+import {ArtistSearchResult} from "../models";
 
 @Component({
   selector: 'app-search-artists',
@@ -23,7 +24,7 @@ import {SearchArtistPageActions} from "../actions";
 })
 export class SearchArtistsPageComponent {
   searchQuery$: Observable<string>;
-  searchResults$: Observable<any[]>;
+  searchResults$: Observable<ArtistSearchResult[]>;
   loading$: Observable<boolean>;
   error$: Observable<string>;
   constructor(

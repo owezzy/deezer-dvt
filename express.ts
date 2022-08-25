@@ -6,7 +6,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-const path = __dirname + '/dist/dezzer-dvt/';
+const path = __dirname + '/dist/deezer-dvt/';
 
 const instance = axios.create({
   baseURL: 'https://api.deezer.com'

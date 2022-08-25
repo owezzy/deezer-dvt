@@ -3,7 +3,7 @@ import {defer, map, mergeMap, of} from "rxjs";
 import {catchError, switchMap} from "rxjs/operators";
 import {Actions, createEffect, ofType} from "@ngrx/effects";
 import {CollectionAPIActions, CollectionPageActions, SelectedArtistPageActions} from "../actions";
-import {Artist, ArtistSearchResult} from "../models";
+import { ArtistSearchResult} from "../models";
 import {ArtistsStorageService} from "../../core/services";
 
 @Injectable()
