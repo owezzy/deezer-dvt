@@ -16,7 +16,7 @@ export class ApiDataService {
 
   searchArtists(name: string): Observable<any> {
     const searchArtist = environment.Deezer_API
-    return this.httpClient.get(`${searchArtist}/search?q=${name}`, {
+    return this.httpClient.get(`${searchArtist}/search?q=${name}&type=artist`, {
       withCredentials: true
     })
   }

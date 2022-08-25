@@ -12,7 +12,7 @@ import {LayoutActions} from "../actions";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  title = 'dezzer-dvt';
+  title = 'deezer-dvt';
 
   showSidenav$: Observable<boolean>;
 

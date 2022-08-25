@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from "rxjs";
-import {ApiDataService} from "../../core/services/api-data.service";
+import {ApiDataService} from "../../core/services";
 
 @Component({
   selector: 'app-components',

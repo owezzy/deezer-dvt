@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class ArtistsCollectionComponent implements OnInit {
+export class MyArtistsCollectionPageComponent implements OnInit {
 
   constructor() { }
 

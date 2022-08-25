@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {FormControl} from "@angular/forms";
+import {MatDrawerMode} from "@angular/material/sidenav";
 
 @Component({
   selector: 'app-sidenav',
@@ -6,10 +8,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
     <mat-sidenav
       #sidenav
       [opened]="open"
-      [mode]="'side'"
+      [mode]="mode.value"
       (keydown.escape)="sidenav.close()"
       (closedStart)="closeMenu.emit()"
-      disableClose
     >
       <mat-nav-list>
         <ng-content></ng-content>
@@ -24,4 +25,5 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class SidenavComponent {
   @Input() open = false;
   @Output() closeMenu = new EventEmitter();
+  @Input() mode = new FormControl('side' as MatDrawerMode);
 }

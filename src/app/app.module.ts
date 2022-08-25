@@ -19,7 +19,6 @@ import {RouterEffects} from "./core/effects";
 
 
 @NgModule({
-  declarations: [],
   imports: [
     BrowserModule,
     AppRoutingModule,
