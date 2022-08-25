@@ -2,11 +2,11 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'search', pathMatch: 'full'},
+  {path: '', redirectTo: '/artists', pathMatch: 'full'},
   {
-    path: 'search',
-    loadChildren: () => import('./search/search.module').then(
-      search => search.SearchModule)
+    path: 'artists',
+    loadChildren: () => import('./artists/artists.module').then(
+      search => search.ArtistsModule)
   },
 
 ];
@@ -14,8 +14,10 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes,{
     useHash: true,
-    enableTracing: true
-
+    enableTracing: true,
+    paramsInheritanceStrategy: 'always',
+    onSameUrlNavigation: 'ignore',
+    relativeLinkResolution: 'legacy',
   })],
   exports: [RouterModule]
 })

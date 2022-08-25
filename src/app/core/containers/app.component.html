@@ -1,0 +1,24 @@
+
+<app-layout>
+  <app-toolbar (openMenu)="openSidenav()">Deezer Artists</app-toolbar>
+  <app-sidenav [open]="(showSidenav$ | async)!" (closeMenu)="closeSidenav()">
+    <app-nav-item
+      (navigate)="closeSidenav()"
+      routerLink="/"
+      icon="book"
+      hint="View your Artists collection"
+    >
+      My Collection
+    </app-nav-item>
+    <app-nav-item
+      (navigate)="closeSidenav()"
+      routerLink="/artists/search"
+      icon="search"
+      hint="Find your next favorite Artists!"
+    >
+      Browse Artists
+    </app-nav-item>
+  </app-sidenav>
+  <router-outlet></router-outlet>
+
+</app-layout>

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from "rxjs";
-import {ApiDataService} from "../../api-data.service";
+import {ApiDataService} from "../../core/services/api-data.service";
 
 @Component({
-  selector: 'app-artists',
+  selector: 'app-components',
   template: `
     <div *ngIf="search$ | async as vd" >
       <pre>{{  vd | json }}</pre>
