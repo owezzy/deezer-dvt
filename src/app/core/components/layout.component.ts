@@ -13,8 +13,7 @@ import { Component } from '@angular/core';
         background: rgba(0, 0, 0, 0.03);
       }
 
-      *,
-      /deep/ * {
+      :host ::ng-deep  {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
