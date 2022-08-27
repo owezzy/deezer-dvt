@@ -7,7 +7,6 @@ import { MyArtistsCollectionPageComponent } from './containers/my-artists-collec
 import { SearchArtistsPageComponent } from './containers/search-artists-page.component';
 import { SelectedArtistPageComponent } from './containers/selected-artist-page.component';
 import { ViewArtistPageComponent } from './containers/view-artist-page.component';
-import { SearchArtistComponent } from './components/search-artist.component';
 import { ArtistPreviewComponent } from './components/artist-preview.component';
 import { ArtistPreviewListComponent } from './components/artist-preview-list.component';
 import {ArtistDetailComponent} from "./components/artist-detail.component";
@@ -30,7 +29,6 @@ export const COMPONENT =[
   ArtistDetailComponent,
   ArtistPreviewComponent,
   ArtistPreviewListComponent,
-  SearchArtistComponent
 ]
 
 @NgModule({
