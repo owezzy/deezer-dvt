@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {NotFoundPageComponent} from "./core/containers/not-found-page.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/artists', pathMatch: 'full'},
@@ -8,7 +9,11 @@ const routes: Routes = [
     loadChildren: () => import('./artists/artists.module').then(
       search => search.ArtistsModule)
   },
-
+  {
+    path: '**',
+    component: NotFoundPageComponent,
+    data: { title: 'Not found' },
+  },
 ];
 
 @NgModule({

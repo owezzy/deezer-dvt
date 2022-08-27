@@ -1,10 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ApiDataService} from "../services";
-import {Observable} from "rxjs";
+import {Observable, share, tap} from "rxjs";
 import {Store} from "@ngrx/store";
 
 import * as fromRoot from '../../Store';
 import {LayoutActions} from "../actions";
+import {MediaObserver} from "@angular/flex-layout";
+import {MatIconRegistry} from "@angular/material/icon";
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-root',
@@ -19,12 +22,22 @@ export class AppComponent implements OnInit{
   search$ : Observable<any>;
   searchArtist$ : Observable<any>;
   artist$ : Observable<any>;
+  @ViewChild('searchbar') searchbar:ElementRef;
 
   constructor(
     public dataService: ApiDataService,
-    private store: Store
+    private store: Store,
+    public media: MediaObserver,
+    iconRegistry: MatIconRegistry,
+    sanitizer: DomSanitizer,
+
   ) {
     this.showSidenav$ = this.store.select(fromRoot.selectShowSidenav);
+    iconRegistry.addSvgIcon(
+      'deezer',
+      sanitizer.bypassSecurityTrustResourceUrl(
+        'assets/deezer-logo/SVG/Deezer_Logo_RVB_White.svg')
+    );
   }
 
 

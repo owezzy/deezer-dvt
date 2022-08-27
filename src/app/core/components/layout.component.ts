@@ -10,11 +10,12 @@ import { Component } from '@angular/core';
   styles: [
     `
       mat-sidenav-container {
+        margin-top: 65px;
+
         background: rgba(0, 0, 0, 0.03);
       }
 
-      *,
-      /deep/ * {
+      :host ::ng-deep  {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }

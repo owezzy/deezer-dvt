@@ -1,6 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+
+@include mat-core();
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
-  background: radial-gradient(circle at left bottom, #1c1c1c , #10317f)
+  background-color: #4c4e54;
 }
+
+
+// $localcast-primary: mat-palette($mat-indigo);
+$localcast-primary: mat-palette($mat-pink, 500);
+$localcast-accent: mat-palette($mat-blue-gray, 600);
+$localcast-grey: mat-palette($mat-grey, 600);

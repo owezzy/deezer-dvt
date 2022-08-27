@@ -3,34 +3,56 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output}
 @Component({
   selector: 'app-search-artist',
   template: `
-    <mat-card>
-      <mat-card-title>Search For an Artist</mat-card-title>
+    <app-search-bar></app-search-bar>
+
+    <mat-card >
+      <mat-card-title>Browse Deezer Artists</mat-card-title>
       <mat-card-content>
-        <mat-form-field>
+        <div fxLayout="row" fxLayoutAlign="center center">
+        <mat-icon color="accent" prefix>search</mat-icon>
+        <mat-form-field color="accent">
           <input
             matInput
-            placeholder="Search for an Artists"
             [value]="query"
             (keyup)="onSearch($event)"
           />
         </mat-form-field>
-        <mat-spinner
-          [class.show]="searching"
-          [diameter]="30"
-          [strokeWidth]="3"
-        ></mat-spinner>
+<!--        <mat-spinner-->
+<!--          [class.show]="searching"-->
+<!--          [diameter]="30"-->
+<!--          [strokeWidth]="3"-->
+<!--        ></mat-spinner>-->
+        </div>
+
       </mat-card-content>
       <mat-card-footer
       ><span *ngIf="error">{{ error }}</span></mat-card-footer
       >
+
     </mat-card>
   `,
   styles: [
-    `      mat-card-title,
+    `
+      mat-card {
+        padding: 13px;
+        background-color: #4c4e54;
+        color: #4c4e54;
+        //background: radial-gradient(circle at bottom, #24417b , #24e5dc)
+
+      }
+
+      mat-card-title,
       mat-card-content,
-      mat-card-footer {
+      mat-card-footer
+      {
         display: flex;
         justify-content: center;
+        color: #ffd740;
+      }
+
+      .mat-form-field-appearance-legacy .mat-form-field-infix {
+        padding: 0.4375em 0;
+        color: aqua;
       }
 
       mat-card-footer {
@@ -53,6 +75,7 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output}
       .mat-spinner.show {
         visibility: visible;
       }
+
     `,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -9,13 +9,13 @@ import {ArtistSearchResult} from "../models";
 @Component({
   selector: 'app-search-artists',
   template: `
-    <app-search-artist
+    <app-search-bar
       [query]="(searchQuery$ | async)!"
       [searching]="(loading$ | async)!"
       [error]="(error$ | async)!"
       (search)="search($event)"
     >
-    </app-search-artist>
+    </app-search-bar>
     <app-artist-preview-list [artists]="(searchResults$ | async)!"> </app-artist-preview-list>
   `,
   styles: [
@@ -27,6 +27,7 @@ export class SearchArtistsPageComponent {
   searchResults$: Observable<ArtistSearchResult[]>;
   loading$: Observable<boolean>;
   error$: Observable<string>;
+
   constructor(
     private store: Store
 

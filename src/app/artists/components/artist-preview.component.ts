@@ -33,7 +33,7 @@ import {Artist, ArtistSearchResult} from "../models";
       mat-card {
         width: 400px;
         margin: 15px;
-        display: flex;
+        display: block;
         flex-flow: column;
         justify-content: space-between;
       }
@@ -62,7 +62,6 @@ import {Artist, ArtistSearchResult} from "../models";
         margin-left: 5px;
       }
       mat-card-content {
-        margin-top: 15px;
         margin: 15px 0 0;
       }
       span {

@@ -12,10 +12,11 @@ import {Artist, ArtistSearchResult} from "../models";
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      margin-top: 60px;
     }`
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ArtistPreviewListComponent {
-@Input() artists: any[]
+@Input() artists: ArtistSearchResult[]
 }
