@@ -16,8 +16,27 @@ import { environment } from '../environments/environment';
 import {EffectsModule} from "@ngrx/effects";
 import {RouterEffects} from "./core/effects";
 import {HttpInterceptorService} from "./core/services";
+import {NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, POSITION, SPINNER} from "ngx-ui-loader";
 
+const primaryColour = '#ffd740';
 
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  fgsColor: primaryColour,
+  bgsColor: primaryColour,
+  bgsOpacity: 5,
+  overlayColor: 'rgba(74, 74, 74, 0.2)',
+  overlayBorderRadius: '50',
+  fgsPosition: POSITION.centerCenter,
+  bgsPosition: POSITION.bottomCenter,
+  blur: 8,
+  fgsSize: 144,
+  bgsSize: 50,
+  bgsType: SPINNER.squareJellyBox, // background spinner type - Arts
+  fgsType: SPINNER.threeStrings, // foreground spinner type - Http
+  hasProgressBar: true,
+  pbColor: primaryColour,
+  pbThickness: 2,
+};
 
 @NgModule({
   imports: [
@@ -44,7 +63,14 @@ import {HttpInterceptorService} from "./core/services";
       // logOnly: environment.production,
     }),
     EffectsModule.forRoot([RouterEffects]),
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground: true,
+      exclude: [
+        'http://localhost:4200/'
 
+      ]
+    }),
     CoreModule,
   ],
   providers: [        { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }

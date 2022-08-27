@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { ArtistsRoutingModule } from './artists-routing.module';
 import {ArtistsComponent} from "./components/artists.component";
-import {RouterModule} from "@angular/router";
 import { MyArtistsCollectionPageComponent } from './containers/my-artists-collection-page.component';
 import { SearchArtistsPageComponent } from './containers/search-artists-page.component';
 import { SelectedArtistPageComponent } from './containers/selected-artist-page.component';
@@ -18,7 +17,21 @@ import {StoreModule} from "@ngrx/store";
 import {EffectsModule} from "@ngrx/effects";
 import {ArtistsEffects, CollectionEffects} from "./effects";
 import {MaterialModule} from "../material";
-
+import {CoreModule} from "../core";
+import {NgxUiLoaderModule} from "ngx-ui-loader";
+export const CONTAINERS =[
+  SearchArtistsPageComponent,
+  ViewArtistPageComponent,
+  SelectedArtistPageComponent,
+  MyArtistsCollectionPageComponent
+]
+export const COMPONENT =[
+  ArtistsComponent,
+  ArtistDetailComponent,
+  ArtistPreviewComponent,
+  ArtistPreviewListComponent,
+  SearchArtistComponent
+]
 
 @NgModule({
   imports: [
@@ -26,19 +39,13 @@ import {MaterialModule} from "../material";
     ArtistsRoutingModule,
     MaterialModule,
     StoreModule.forFeature(fromArtists.artistFeatureStateKey, fromArtists.reducers),
-    EffectsModule.forFeature([ArtistsEffects, CollectionEffects])
+    EffectsModule.forFeature([ArtistsEffects, CollectionEffects]),
+    NgxUiLoaderModule,
+    CoreModule
   ],
   declarations: [
-    ArtistsComponent,
-    ArtistDetailComponent,
-    MyArtistsCollectionPageComponent,
-    SearchArtistsPageComponent,
-    SelectedArtistPageComponent,
-    ViewArtistPageComponent,
-    SearchArtistComponent,
-    ArtistPreviewComponent,
-    ArtistPreviewListComponent
+    CONTAINERS, COMPONENT
   ],
-
+  exports: []
 })
 export class ArtistsModule { }

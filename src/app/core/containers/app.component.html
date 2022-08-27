@@ -1,23 +1,25 @@
 <app-layout>
-  <app-toolbar (openMenu)="openSidenav()">Deezer Artists</app-toolbar>
+  <app-toolbar (openMenu)="openSidenav()">
+  </app-toolbar>
   <app-sidenav [open]="(showSidenav$ | async)!" (closeMenu)="closeSidenav()">
     <app-nav-item
       (navigate)="closeSidenav()"
       routerLink="/"
-      icon="book"
-      hint="View your Artists collection"
+      routerLinkActive="active-link"
+      icon="groups"
     >
-      My Collection
+      My Artist Collection
     </app-nav-item>
     <app-nav-item
       (navigate)="closeSidenav()"
       routerLink="/artists/search"
-      icon="search"
-      hint="Find your next favorite Artists!"
+      routerLinkActive="active-link"
+      icon="person_search"
     >
       Browse Artists
     </app-nav-item>
   </app-sidenav>
+  <ngx-ui-loader></ngx-ui-loader>
   <router-outlet></router-outlet>
 
 </app-layout>

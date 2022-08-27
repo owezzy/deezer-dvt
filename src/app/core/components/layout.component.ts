@@ -10,6 +10,8 @@ import { Component } from '@angular/core';
   styles: [
     `
       mat-sidenav-container {
+        margin-top: 65px;
+
         background: rgba(0, 0, 0, 0.03);
       }
 
