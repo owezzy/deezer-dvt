@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "dezzer-dvt": {
+    "deezer-dvt": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -73,10 +73,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "dezzer-dvt:build:production"
+              "browserTarget": "deezer-dvt:build:production"
             },
             "development": {
-              "browserTarget": "dezzer-dvt:build:development"
+              "browserTarget": "deezer-dvt:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "dezzer-dvt:build"
+            "browserTarget": "deezer-dvt:build"
           }
         },
         "test": {
