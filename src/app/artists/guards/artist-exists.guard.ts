@@ -38,7 +38,7 @@ export class ArtistExistsGuard implements CanActivate {
    * This method checks if a book with the given ID is already registered
    * in the Store
    */
-  hasBookInStore(id: string): Observable<boolean> {
+  hasArtistInStore(id: string): Observable<boolean> {
     return this.store.select(fromArtists.selectArtistEntities).pipe(
       map((entities) => !!entities[id]),
       take(1)
@@ -49,7 +49,7 @@ export class ArtistExistsGuard implements CanActivate {
    * This method loads a book with the given ID from the API and caches
    * it in the store, returning `true` or `false` if it was found.
    */
-  hasBookInApi(id: string): Observable<boolean> {
+  hasArtistInApi(id: string): Observable<boolean> {
     return this.apiDataService.getArtist(id).pipe(
       map((ArtistEntity) => ArtistActions.loadArtist({ artist: ArtistEntity })),
       tap((action) => this.store.dispatch(action)),
@@ -66,14 +66,13 @@ export class ArtistExistsGuard implements CanActivate {
    * if the book is in store, and if not it then checks if it is in the
    * API.
    */
-  hasBook(id: string): Observable<boolean> {
-    return this.hasBookInStore(id).pipe(
+  hasArtist(id: string): Observable<boolean> {
+    return this.hasArtistInStore(id).pipe(
       switchMap((inStore) => {
         if (inStore) {
           return of(inStore);
         }
-
-        return this.hasBookInApi(id);
+        return this.hasArtistInApi(id);
       })
     );
   }
@@ -92,8 +91,9 @@ export class ArtistExistsGuard implements CanActivate {
    * to the 404 page.
    */
   canActivate(route: ActivatedRouteSnapshot): Observable<boolean> {
-    return this.waitForCollectionToLoad().pipe(
-      switchMap(() => this.hasBook(route.params['id']))
-    );
+    // return this.waitForCollectionToLoad()!!.pipe(
+    //   switchMap(() => this.hasArtist(route.params['id']))
+    // );
+    return this.hasArtist(route.params['id'])
   }
 }

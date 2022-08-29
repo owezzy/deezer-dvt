@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {ArtistSearchResult} from "../models";
+import {Store} from "@ngrx/store";
+import {CollectionPageActions} from "../actions";
+import {Observable} from "rxjs";
+import * as fromArtists from '../reducers'
 
 @Component({
   selector: 'app-artists-collection',
@@ -8,6 +13,7 @@ import { Component, OnInit } from '@angular/core';
     <p>
       artists-collection works!
     </p>
+      <app-artist-preview-list [artists]="(artists$ | async)!"></app-artist-preview-list>
 
     </div>
   `,
@@ -19,9 +25,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyArtistsCollectionPageComponent implements OnInit {
 
-  constructor() { }
+  artists$: Observable<ArtistSearchResult[]>;
 
-  ngOnInit(): void {
+  constructor(private store: Store) {
+    this.artists$ = store.select(fromArtists.selectArtistCollection);
+  }
+
+  ngOnInit() {
+    this.store.dispatch(CollectionPageActions.enter());
   }
 
 }

@@ -32,7 +32,7 @@ export const removeArtistFailure = createAction(
  */
 export const loadArtistsSuccess = createAction(
   '[Collection/API] Load Artists Success',
-  props<{ artists: ArtistSearchResult[] }>()
+  props<{ artists: Artist[] }>()
 );
 
 export const loadArtistsFailure = createAction(

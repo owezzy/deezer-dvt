@@ -3,7 +3,7 @@ import {defer, map, mergeMap, of} from "rxjs";
 import {catchError, switchMap} from "rxjs/operators";
 import {Actions, createEffect, ofType} from "@ngrx/effects";
 import {CollectionAPIActions, CollectionPageActions, SelectedArtistPageActions} from "../actions";
-import { ArtistSearchResult} from "../models";
+import {Artist} from "../models";
 import {ArtistsStorageService} from "../../core/services";
 
 @Injectable()
@@ -19,7 +19,7 @@ export class CollectionEffects {
       ofType(CollectionPageActions.enter),
       switchMap(() =>
         this.storageService.getCollection().pipe(
-          map((artists: ArtistSearchResult[]) =>
+          map((artists: Artist[]) =>
             CollectionAPIActions.loadArtistsSuccess({ artists })
           ),
           catchError((error) =>
