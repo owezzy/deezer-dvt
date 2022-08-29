@@ -79,9 +79,9 @@ export const selectSearchError = createSelector(
 export const selectSearchResults = createSelector(
   selectArtistEntities,
   selectSearchArtistIds,
-  (books, searchIds) => {
+  (artists, searchIds) => {
     return searchIds
-      .map((id) => books[id])
+      .map((id) => artists[id])
       .filter((artist): artist is ArtistSearchResult => artist != null);
   }
 );

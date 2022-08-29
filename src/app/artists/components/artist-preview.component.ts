@@ -14,9 +14,11 @@ import {Artist, ArtistSearchResult} from "../models";
             }}</mat-card-subtitle>
         </mat-card-title-group>
         <mat-card-content>
-          <p *ngIf="description">{{ description }}</p>
+          <strong>
+            <p *ngIf="description">{{ description | convertFans}} fans</p>
+          </strong>
         </mat-card-content>
-<!--        {{artistData | json}}-->
+        <!--        {{artistData | json}}-->
       </mat-card>
     </a>
   `,
@@ -43,31 +45,39 @@ import {Artist, ArtistSearchResult} from "../models";
           margin: 15px 0 !important;
         }
       }
+
       mat-card:hover {
         box-shadow: 3px 3px 16px -2px rgba(0, 0, 0, 0.5);
       }
+
       mat-card-title {
         margin-right: 10px;
       }
+
       mat-card-title-group {
         margin: 0;
       }
+
       a {
         color: inherit;
         text-decoration: none;
       }
+
       img {
         width: 60px;
         min-width: 60px;
         margin-left: 5px;
       }
+
       mat-card-content {
         margin: 15px 0 0;
       }
+
       span {
         display: inline-block;
         font-size: 13px;
       }
+
       mat-card-footer {
         padding: 0 25px 25px;
       }
@@ -83,20 +93,24 @@ export class ArtistPreviewComponent {
   }
 
   get title() {
-    return this.artistData.title;
+    return this.artistData.name;
+
   }
 
   get subtitle() {
-    return this.artistData.type;
+    return this.artistData.title;
+
+
   }
 
   get description() {
-    return this.artistData.artist.name;
+    return this.artistData.nb_fan;
+
   }
 
   get thumbnail(): string | boolean {
-    if (this.artistData.artist.picture) {
-      return this.artistData.artist.picture
+    if (this.artistData) {
+      return this.artistData.picture_medium
     }
 
     return false;

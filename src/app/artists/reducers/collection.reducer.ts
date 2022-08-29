@@ -1,4 +1,4 @@
-import {CollectionAPIActions, CollectionPageActions, SelectedArtistPageActions} from "../actions";
+import {ArtistsApiActions, CollectionAPIActions, CollectionPageActions, SelectedArtistPageActions} from "../actions";
 import {createReducer, on} from "@ngrx/store";
 
 export const collectionFeatureKey = 'collection';
@@ -20,10 +20,13 @@ export const reducer = createReducer(
     ...state,
     loading: true,
   })),
-  on(CollectionAPIActions.loadArtistsSuccess, (_state, { artists }) => ({
+  on(
+    // ArtistsApiActions.searchSuccess,
+    CollectionAPIActions.loadArtistsSuccess,
+    (_state, { artists }) => ({
     loaded: true,
     loading: false,
-    ids: artists.map((book) => book.id),
+    ids: artists.map((artist) => artist.id),
   })),
 
   on(

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ArtistsRoutingModule } from './artists-routing.module';
-import {ArtistsComponent} from "./components/artists.component";
 import { MyArtistsCollectionPageComponent } from './containers/my-artists-collection-page.component';
 import { SearchArtistsPageComponent } from './containers/search-artists-page.component';
 import { SelectedArtistPageComponent } from './containers/selected-artist-page.component';
@@ -18,6 +17,11 @@ import {ArtistsEffects, CollectionEffects} from "./effects";
 import {MaterialModule} from "../material";
 import {CoreModule} from "../core";
 import {NgxUiLoaderModule} from "ngx-ui-loader";
+import { ArtistTopTracksComponent } from './components/artist-top-tracks.component';
+import { ArtistAlbumsComponent } from './components/artist-albums.component';
+import { ConvertDurationPipe } from './pipes/convert-duration.pipe';
+import { ConvertFansPipe } from './pipes/convert-fans.pipe';
+
 export const CONTAINERS =[
   SearchArtistsPageComponent,
   ViewArtistPageComponent,
@@ -25,10 +29,11 @@ export const CONTAINERS =[
   MyArtistsCollectionPageComponent
 ]
 export const COMPONENT =[
-  ArtistsComponent,
   ArtistDetailComponent,
   ArtistPreviewComponent,
   ArtistPreviewListComponent,
+  ArtistTopTracksComponent,
+  ArtistAlbumsComponent
 ]
 
 @NgModule({
@@ -42,7 +47,7 @@ export const COMPONENT =[
     CoreModule
   ],
   declarations: [
-    CONTAINERS, COMPONENT
+    CONTAINERS, COMPONENT, ConvertDurationPipe, ConvertFansPipe,
   ],
   exports: []
 })

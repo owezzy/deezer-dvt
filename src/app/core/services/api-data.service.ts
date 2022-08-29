@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
 import {map, Observable} from "rxjs";
+import {Album, ArtistSearchResult, ArtistTopTrack} from "../../artists/models";
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +15,10 @@ export class ApiDataService {
   ) {
   }
 
-  searchArtists(name: string): Observable<any> {
-    const searchArtist = this.urlCors+environment.Deezer_API
-    return this.httpClient.get(`${searchArtist}/search?q=${name}&type=artist`)
+  searchArtists(name: string): Observable<ArtistSearchResult> {
+    // const searchArtist = this.urlCors+environment.Deezer_API
+    const searchArtist = environment.Deezer_API
+    return this.httpClient.get<ArtistSearchResult>(`${searchArtist}/search/artist?q=${name}`)
   }
 
   searchMusic(str: string, type = 'artist'): Observable<any[]> {
@@ -25,7 +27,17 @@ export class ApiDataService {
   }
 
   getArtist(id: string): Observable<any> {
-    const artistUrl = this.urlCors + `https://api.deezer.com/artist/${id}`;
+    const artistUrl = `https://api.deezer.com/artist/${id}`;
     return this.httpClient.get(artistUrl).pipe(map(res => <any> res));
+  }
+
+  getArtistAlbums(id: string):Observable<Album[]>{
+    const albumsUrl = `https://api.deezer.com/artist/${id}/albums?index=0&limit=5`
+    return this.httpClient.get<Album[]>(`${albumsUrl}`)
+  }
+  getArtistTopTracks(id: string):Observable<ArtistTopTrack[]>{
+    const artistTopTracks = `https://api.deezer.com/artist/${id}/top?index=0&limit=5`
+    return this.httpClient.get<{data: ArtistTopTrack[]}>(`${artistTopTracks}`).pipe(map((res) => <any>res.data))
+
   }
 }
