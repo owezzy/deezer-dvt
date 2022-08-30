@@ -1,25 +1,32 @@
+<div class="app-container">
 <app-layout>
-  <app-toolbar (openMenu)="openSidenav()">
-  </app-toolbar>
+
   <app-sidenav [open]="(showSidenav$ | async)!" (closeMenu)="closeSidenav()">
+<!--    <app-nav-item-->
+<!--      (navigate)="closeSidenav()"-->
+<!--      routerLink="/"-->
+<!--      routerLinkActive="active-link"-->
+<!--      icon="groups"-->
+<!--    >-->
+<!--      My Artist Collection-->
+<!--    </app-nav-item>-->
     <app-nav-item
       (navigate)="closeSidenav()"
-      routerLink="/"
-      routerLinkActive="active-link"
-      icon="groups"
-    >
-      My Artist Collection
-    </app-nav-item>
-    <app-nav-item
-      (navigate)="closeSidenav()"
-      routerLink="/artists/search"
+      [routerLink]="['artists','search']"
+      [queryParams]="{
+      q: 'jayz'
+      }"
       routerLinkActive="active-link"
       icon="person_search"
     >
       Browse Artists
     </app-nav-item>
   </app-sidenav>
+
+  <app-toolbar (openMenu)="openSidenav()">
+  </app-toolbar>
   <ngx-ui-loader></ngx-ui-loader>
   <router-outlet></router-outlet>
-
 </app-layout>
+
+</div>

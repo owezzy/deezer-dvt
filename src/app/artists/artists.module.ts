@@ -21,6 +21,7 @@ import { ArtistTopTracksComponent } from './components/artist-top-tracks.compone
 import { ArtistAlbumsComponent } from './components/artist-albums.component';
 import { ConvertDurationPipe } from './pipes/convert-duration.pipe';
 import { ConvertFansPipe } from './pipes/convert-fans.pipe';
+import { VimeModule } from '@vime/angular';
 
 export const CONTAINERS =[
   SearchArtistsPageComponent,
@@ -44,11 +45,14 @@ export const COMPONENT =[
     StoreModule.forFeature(fromArtists.artistFeatureStateKey, fromArtists.reducers),
     EffectsModule.forFeature([ArtistsEffects, CollectionEffects]),
     NgxUiLoaderModule,
-    CoreModule
+    CoreModule,
+    VimeModule,
   ],
   declarations: [
     CONTAINERS, COMPONENT, ConvertDurationPipe, ConvertFansPipe,
   ],
-  exports: []
+    exports: [
+        SelectedArtistPageComponent
+    ]
 })
 export class ArtistsModule { }

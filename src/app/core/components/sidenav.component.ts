@@ -8,10 +8,9 @@ import {MatDrawerMode} from "@angular/material/sidenav";
     <mat-sidenav
       #sidenav
       [opened]="open"
-      [mode]="mode.value"
+      mode="side"
       (keydown.escape)="closeMenu.emit()"
       (closedStart)="closeMenu.emit()"
-      [disableClose]="false"
     >
       <mat-nav-list>
         <ng-content></ng-content>
@@ -22,8 +21,15 @@ import {MatDrawerMode} from "@angular/material/sidenav";
     `
       mat-sidenav {
         width: 200px;
-        color: #4c4e54;
+        margin-top: 64px;
       }
+
+      @media screen and (max-width: 600px) {
+        mat-sidenav{
+        margin-top: 56px
+      }
+      }
+
     `,
   ],
 })

@@ -1,18 +1,40 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
-import {map, Observable} from "rxjs";
+import {BehaviorSubject, map, Observable} from "rxjs";
 import {Album, ArtistSearchResult, ArtistTopTrack} from "../../artists/models";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiDataService {
+  public params$ = new BehaviorSubject<Map<string, string>>(null);
+
   urlCors = "https://cors-anywhere.herokuapp.com/";
 
   constructor(
     private httpClient: HttpClient
   ) {
+  }
+
+  getHttpParams = (data: Map<string, string>): HttpParams => {
+    if (data === undefined) {
+      return new HttpParams();
+    }
+
+    let httpParams: HttpParams = new HttpParams();
+    data.forEach((value: string, key: string) => {
+      httpParams = httpParams.append(key, value);
+    });
+    return httpParams;
+  };
+
+  searchResource(resourceName: string, params:Map<string, string>): Observable<ArtistSearchResult> {
+    // const searchArtist = this.urlCors+environment.Deezer_API
+    const searchArtist = environment.Deezer_API
+    return this.httpClient.get<ArtistSearchResult>(`${searchArtist}/search/${resourceName}`,{
+      params: this.getHttpParams(params)
+    })
   }
 
   searchArtists(name: string): Observable<ArtistSearchResult> {

@@ -44,9 +44,8 @@ import * as fromArtists from '../../artists/reducers';
     .site_logo {
       width: 44px;
       height: 44px;
-      transform: scale(1.5);
-      padding-right: 21px;
-
+      transform: scale(2);
+      margin-right: 13px;
     }
 
     header{
@@ -83,7 +82,9 @@ export class ToolbarComponent {
     this.error$ = store.select(fromArtists.selectSearchError); }
 
   search(query: string) {
-    this.store.dispatch(SearchArtistPageActions.searchArtists({ query }));
+    const resourceName  = 'artist'
+    this.store.dispatch(SearchArtistPageActions.searchArtists({ query, resourceName
+    }));
   }
 
 

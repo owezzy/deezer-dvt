@@ -10,12 +10,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   `,
   styles: [
     `
-      .secondary {
+    .secondary {
         color: rgba(0, 0, 0, 0.54);
-      }
-      .mat-accent{
-
-        color: #099;
       }
     `,
   ],

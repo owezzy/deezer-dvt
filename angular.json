@@ -31,7 +31,7 @@
               "src/favicon-16x16.png"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "deezer-theme.scss",
               "src/styles.scss"
             ],
             "scripts": [],

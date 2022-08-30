@@ -12,11 +12,11 @@ import { CoreModule } from './core';
 import {metaReducers, ROOT_REDUCERS} from "./Store";
 import {StoreRouterConnectingModule} from "@ngrx/router-store";
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment';
 import {EffectsModule} from "@ngrx/effects";
 import {RouterEffects} from "./core/effects";
 import {HttpInterceptorService} from "./core/services";
 import {NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, POSITION, SPINNER} from "ngx-ui-loader";
+import { VimeModule } from '@vime/angular';
 
 const primaryColour = '#ffd740';
 
@@ -46,6 +46,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     ArtistsModule,
     BrowserAnimationsModule,
     MaterialModule,
+    VimeModule,
     StoreModule.forRoot(ROOT_REDUCERS, {
       metaReducers,
       runtimeChecks: {

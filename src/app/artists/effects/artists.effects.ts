@@ -16,7 +16,7 @@ export class ArtistsEffects {
         this.actions$.pipe(
           ofType(SearchArtistPageActions.searchArtists),
           debounceTime(debounce, scheduler),
-          switchMap(({ query }) => {
+          switchMap(({ query, resourceName }) => {
             if (query === '') {
               return EMPTY;
             }

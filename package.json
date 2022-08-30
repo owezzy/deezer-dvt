@@ -29,6 +29,8 @@
     "@ngrx/router-store": "^13.2.0",
     "@ngrx/store": "^13.2.0",
     "@ngrx/store-devtools": "^13.2.0",
+    "@vime/angular": "^5.3.1",
+    "@vime/core": "^5.3.1",
     "cors": "^2.8.5",
     "express": "^4.18.1",
     "helmet": "^6.0.0",
@@ -37,8 +39,6 @@
     "ngx-ui-loader": "^13.0.0",
     "nodemon": "^2.0.19",
     "normalize.css": "^8.0.1",
-    "highlight.js": "^11.6.0",
-    "simplebar": "~5.3.8",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
