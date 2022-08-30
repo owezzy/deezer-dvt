@@ -12,7 +12,7 @@ export class ArtistsEffects {
 
   search$ = createEffect(
     () =>
-      ({debounce = 800, scheduler = asyncScheduler} = {}) =>
+      ({debounce = 1000, scheduler = asyncScheduler} = {}) =>
         this.actions$.pipe(
           ofType(SearchArtistPageActions.searchArtists),
           debounceTime(debounce, scheduler),
