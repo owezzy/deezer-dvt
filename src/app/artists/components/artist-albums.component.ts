@@ -63,9 +63,9 @@ export class ArtistAlbumsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.albums.pipe(tap((data) => {
-      console.log("------albums---------", data)
-    }), share()).subscribe()
+    // this.albums.pipe(tap((data) => {
+    //   console.log("------albums---------", data)
+    // }), share()).subscribe()
   }
 
 }

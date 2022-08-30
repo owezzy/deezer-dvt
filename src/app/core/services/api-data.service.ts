@@ -17,29 +17,10 @@ export class ApiDataService {
   ) {
   }
 
-  getHttpParams = (data: Map<string, string>): HttpParams => {
-    if (data === undefined) {
-      return new HttpParams();
-    }
-
-    let httpParams: HttpParams = new HttpParams();
-    data.forEach((value: string, key: string) => {
-      httpParams = httpParams.append(key, value);
-    });
-    return httpParams;
-  };
-
-  searchResource(resourceName: string, params:Map<string, string>): Observable<ArtistSearchResult> {
-    // const searchArtist = this.urlCors+environment.Deezer_API
-    const searchArtist = environment.Deezer_API
-    return this.httpClient.get<ArtistSearchResult>(`${searchArtist}/search/${resourceName}`,{
-      params: this.getHttpParams(params)
-    })
-  }
 
   searchArtists(name: string): Observable<ArtistSearchResult> {
-    // const searchArtist = this.urlCors+environment.Deezer_API
-    const searchArtist = environment.Deezer_API
+    const searchArtist = this.urlCors+environment.Deezer_API
+    // const searchArtist = environment.Deezer_API
     const options = new HttpParams()
       .set('q', name)
     return this.httpClient.get<ArtistSearchResult>(`${searchArtist}/search/artist`,{

@@ -52,14 +52,21 @@ import {Observable, share, tap} from "rxjs";
 })
 export class ArtistTopTracksComponent implements OnInit {
   @Input() topTracks: Observable<any>
+  private pageNo: Number = 10;
 
   constructor() {
   }
 
   ngOnInit(): void {
-    this.topTracks.pipe(tap((data) => {
-      console.log("------topTracks---------", data)
-    }), share()).subscribe()
+    // this.topTracks.pipe(tap((data) => {
+    //   console.log("------topTracks---------", data)
+    // }), share()).subscribe()
   }
 
+  onScroll() {
+    console.log('...........scrolled Base.....................');
+    // this.params.set('page_number', String(this.pageNo));
+    // this.genericBaseMultiviewService.queryParams.next(this.params);
+    // this.loadNextResource();
+  }
 }

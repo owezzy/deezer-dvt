@@ -21,6 +21,7 @@ import { ArtistAlbumsComponent } from './components/artist-albums.component';
 import { ConvertDurationPipe } from './pipes/convert-duration.pipe';
 import { ConvertFansPipe } from './pipes/convert-fans.pipe';
 import { VimeModule } from '@vime/angular';
+import {InfiniteScrollModule} from "ngx-infinite-scroll";
 
 export const CONTAINERS =[
   SearchArtistsPageComponent,
@@ -36,16 +37,17 @@ export const COMPONENT =[
 ]
 
 @NgModule({
-  imports: [
-    CommonModule,
-    ArtistsRoutingModule,
-    MaterialModule,
-    StoreModule.forFeature(fromArtists.artistFeatureStateKey, fromArtists.reducers),
-    EffectsModule.forFeature([ArtistsEffects, CollectionEffects]),
-    NgxUiLoaderModule,
-    CoreModule,
-    VimeModule,
-  ],
+    imports: [
+        CommonModule,
+        ArtistsRoutingModule,
+        MaterialModule,
+        StoreModule.forFeature(fromArtists.artistFeatureStateKey, fromArtists.reducers),
+        EffectsModule.forFeature([ArtistsEffects, CollectionEffects]),
+        NgxUiLoaderModule,
+        CoreModule,
+        VimeModule,
+        InfiniteScrollModule,
+    ],
   declarations: [
     CONTAINERS, COMPONENT, ConvertDurationPipe, ConvertFansPipe,
   ],
