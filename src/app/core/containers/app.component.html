@@ -2,17 +2,9 @@
 <app-layout>
 
   <app-sidenav [open]="(showSidenav$ | async)!" (closeMenu)="closeSidenav()">
-<!--    <app-nav-item-->
-<!--      (navigate)="closeSidenav()"-->
-<!--      routerLink="/"-->
-<!--      routerLinkActive="active-link"-->
-<!--      icon="groups"-->
-<!--    >-->
-<!--      My Artist Collection-->
-<!--    </app-nav-item>-->
     <app-nav-item
       (navigate)="closeSidenav()"
-      [routerLink]="['artists','search']"
+      [routerLink]="['artists']"
       [queryParams]="{
       q: 'jayz'
       }"

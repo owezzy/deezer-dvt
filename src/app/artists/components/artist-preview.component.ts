@@ -6,7 +6,7 @@ import {Artist, ArtistSearchResult} from "../models";
   template: `
 <div class="grid">
 
-    <a [routerLink]="['/artists','artist', id]">
+    <a [routerLink]="['/artists', id]">
       <mat-card class="mat-elevation-z4 multiview">
         <img mat-card-image *ngIf="thumbnail" [src]="thumbnail"/>
         <mat-card-actions>
@@ -16,7 +16,6 @@ import {Artist, ArtistSearchResult} from "../models";
             <p *ngIf="description">{{ description | convertFans}} fans</p>
           </strong>
         </mat-card-actions>
-        <!--        {{artistData | json}}-->
       </mat-card>
     </a>
 </div>

@@ -54,7 +54,7 @@ export class ApiDataService {
   }
 
   getArtistAlbums(id: string):Observable<Album[]>{
-    const albumsUrl = `https://api.deezer.com/artist/${id}/albums?index=0&limit=5`
+    const albumsUrl = `https://api.deezer.com/artist/${id}/albums`
     return this.httpClient.get<Album[]>(`${albumsUrl}`)
   }
   getArtistTopTracks(id: string):Observable<ArtistTopTrack[]>{

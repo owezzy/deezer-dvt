@@ -5,12 +5,17 @@ import {Observable, share, tap} from "rxjs";
   selector: 'app-artist-top-tracks',
   template: `
     <div *ngIf="topTracks | async as topTracksData">
-      <mat-card>
-        <mat-card-title>Top tracks</mat-card-title>
+        <mat-card-title>Top Tracks</mat-card-title>
         <mat-selection-list #tracks [multiple]="false">
           <mat-list-option *ngFor="let track of topTracksData" [value]="track.preview">
+            <div fxLayout="row" fxLayoutAlign="space-between center" >
+            <span>
             {{track.title}}
+            </span>
+            <span>
             {{track.duration  | convertDuration }}
+            </span>
+            </div>
           </mat-list-option>
         </mat-selection-list>
 
@@ -23,7 +28,6 @@ import {Observable, share, tap} from "rxjs";
             <track [attr.src]=tracks.selectedOptions.selected[0]?.value>
           </vm-audio>
         </vm-player>
-      </mat-card>
     </div>
 
   `,
@@ -34,6 +38,13 @@ import {Observable, share, tap} from "rxjs";
       align-items: center;
       padding: 0;
       margin: 0;
+    }
+    mat-list-option{
+      span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
 
     }`
 

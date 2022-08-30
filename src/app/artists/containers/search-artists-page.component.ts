@@ -15,7 +15,7 @@ import {ActivatedRoute, Router} from "@angular/router";
   styles: [
     `.multiview-container {
       width: 100%;
-      height: 95vh;
+      height: 100vh;
       overflow: scroll;
     }
     `

@@ -14,15 +14,17 @@ import {MediaObserver} from "@angular/flex-layout";
           <mat-card fxFlex.xs>
           <img mat-card-image [src]="artist.picture_medium" alt="Artist_Image">
             <mat-card-content>
-              <h3>{{artist.name}}</h3>
+              <div fxLayout="column" fxLayoutAlign="space-between start" >
+              <span>{{artist.name}}</span>
               <span>
                 <strong>
                   {{artist.nb_fan | convertFans}}
                 </strong>fans</span>
+              </div>
             </mat-card-content>
           </mat-card>
 
-          <div class="artist-top-tracks" [hidden]="media.isActive('xs')">
+          <div class="artist-top-tracks" [hidden]="media.isActive('xs')" fxFlex>
             <app-artist-top-tracks [topTracks]="topTracks$"></app-artist-top-tracks>
           </div>
 
@@ -40,9 +42,19 @@ import {MediaObserver} from "@angular/flex-layout";
       //display: flex;
       //justify-content: center;
     }
+    .artist-top-tracks{
+      margin: 8px;
+      span {
+        //overflow: hidden;
+        width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+
+    }
     .artist-album{
       margin-top: 21px;
-
     }
 
 

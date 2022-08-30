@@ -18,7 +18,7 @@ import {HttpInterceptorService} from "./core/services";
 import {NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, POSITION, SPINNER} from "ngx-ui-loader";
 import { VimeModule } from '@vime/angular';
 
-const primaryColour = '#ffd740';
+const primaryColour = '#e91e63';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   fgsColor: primaryColour,
@@ -31,7 +31,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   blur: 8,
   fgsSize: 144,
   bgsSize: 50,
-  bgsType: SPINNER.squareJellyBox, // background spinner type - Arts
+  bgsType: SPINNER.squareJellyBox, // background spinner type
   fgsType: SPINNER.threeStrings, // foreground spinner type - Http
   hasProgressBar: true,
   pbColor: primaryColour,

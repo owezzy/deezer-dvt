@@ -7,25 +7,16 @@ import {ArtistExistsGuard} from "./guards";
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/artist',
-    pathMatch: 'full',
-  },
-  {
-    path: 'artist',
     component: SearchArtistsPageComponent,
     data: {title: 'Deezer Artists'},
   },
   {
-    path: 'artist/:id',
+    path: ':id',
     component: ViewArtistPageComponent,
     canActivate: [ArtistExistsGuard],
     data: {title: 'Artist Details'}
   },
-  // {
-  //   path: '',
-  //   component: MyArtistsCollectionPageComponent,
-  //   data: {title: 'My Artists Collection'}
-  // },
+
   ]
 
 @NgModule({

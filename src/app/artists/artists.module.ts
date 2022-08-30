@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ArtistsRoutingModule } from './artists-routing.module';
-import { MyArtistsCollectionPageComponent } from './containers/my-artists-collection-page.component';
 import { SearchArtistsPageComponent } from './containers/search-artists-page.component';
 import { SelectedArtistPageComponent } from './containers/selected-artist-page.component';
 import { ViewArtistPageComponent } from './containers/view-artist-page.component';
@@ -27,7 +26,6 @@ export const CONTAINERS =[
   SearchArtistsPageComponent,
   ViewArtistPageComponent,
   SelectedArtistPageComponent,
-  MyArtistsCollectionPageComponent
 ]
 export const COMPONENT =[
   ArtistDetailComponent,
