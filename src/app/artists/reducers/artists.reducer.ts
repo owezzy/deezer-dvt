@@ -8,6 +8,7 @@ export const artistsFeatureKey = 'artists';
 
 export interface State extends EntityState<ArtistSearchResult> {
   selectedArtistId: string | null
+  nextPage: string
 }
 
 export const adapter: EntityAdapter<ArtistSearchResult> = createEntityAdapter<ArtistSearchResult>({
@@ -16,7 +17,8 @@ export const adapter: EntityAdapter<ArtistSearchResult> = createEntityAdapter<Ar
 });
 
 export const initialState: State = adapter.getInitialState( {
-  selectedArtistId: null
+  selectedArtistId: null,
+  nextPage: null
 });
 
 export const reducer = createReducer(
@@ -30,6 +32,9 @@ export const reducer = createReducer(
 
   on(ArtistActions.loadArtist,
     (state, {artist}) => adapter.addOne(artist, state)),
+
+  on(ArtistActions.loadNextPageUrl,
+    (state, {url}) => ({...state, nextPage: url})),
 
   on(ViewArtistPageActions.selectArtist,
     (state, {id}) => ({...state, selectedArtistId: id}))

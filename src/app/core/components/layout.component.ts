@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component} from '@angular/core';
 import {routeAnimations} from "../../../shared/animations/route.animations";
 
 @Component({
@@ -14,17 +14,18 @@ import {routeAnimations} from "../../../shared/animations/route.animations";
   `,
   styles: [
     `
-      :host ::ng-deep  {
+      :host ::ng-deep {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+      }
+      .mat-drawer-container{
+        position: unset;
 
 
       }
-
     `,
   ],
   animations: [routeAnimations],
-  encapsulation: ViewEncapsulation.Emulated
 
 
 })

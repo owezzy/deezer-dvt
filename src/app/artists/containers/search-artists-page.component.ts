@@ -22,44 +22,14 @@ import {ActivatedRoute, Router} from "@angular/router";
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SearchArtistsPageComponent implements OnInit {
+export class SearchArtistsPageComponent {
   searchResults$: Observable<ArtistSearchResult[]>;
-  params = new Map<string, string>();
 
   constructor(
     private store: Store,
-    private router: Router,
-    private route: ActivatedRoute,
-
-
   ) {
     this.searchResults$ = store.select(fromArtists.selectSearchResults)
  }
 
- ngOnInit(){
-   this.route.queryParams.subscribe((qparams) => {
-     this.params.set('resource_name', 'artist');
-     this.params.set('q', qparams['q']);
-     // if (qparams.number === undefined) {
-     //   this.params.delete('name');
-     // } else {
-     //   this.params.set('name', `[anywords]${this.params.get('name')}`);
-     // }
-     // this.params.set('page_length', qparams.page_length);
-     // this.params.set('order_by', qparams.order_by);
-     // if (typeof qparams.page_number != undefined) {
-     //   this.params.set('page_number', qparams.page_number);
-     // }
-
-     console.log(
-       '..........multiviewResourceService...URLSearchParams.....................',
-       this.params
-     );
-     // console.log(
-     //   '..........multiviewResourceService...resourceName.....................',
-     //   this.resourceName
-   });
-
- }
 
 }

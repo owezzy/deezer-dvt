@@ -1,10 +1,16 @@
-import {Component, Output, EventEmitter, ViewChild, ElementRef, Input, SimpleChanges, OnChanges} from '@angular/core';
+import {
+  Component,
+  Output,
+  EventEmitter,
+  OnInit
+} from '@angular/core';
 import {SearchArtistPageActions} from "../../artists/actions";
 import {Store} from "@ngrx/store";
 import {Observable} from "rxjs";
 import {ArtistSearchResult} from "../../artists/models";
 import {take} from "rxjs/operators";
 import * as fromArtists from '../../artists/reducers';
+import {InterceptorService} from "../services/interceptor.service";
 
 
 
@@ -24,6 +30,10 @@ import * as fromArtists from '../../artists/reducers';
               (search)="search($event)"
             >
             </app-search-bar>
+        <button style="margin-right: 33px" [hidden]="interceptorService.corsStatusObservable$ | async">
+          <a mat-mini-fab color="warn"
+             target="_blank" [href]="interceptorService.CORS_ENDPOINT">Cors</a>
+        </button>
         <div fxLayout="row" fxLayoutAlign="space-between center">
 
           <ng-content></ng-content>
@@ -65,7 +75,7 @@ import * as fromArtists from '../../artists/reducers';
 
   ]
 })
-export class ToolbarComponent {
+export class ToolbarComponent implements OnInit {
   @Output() openMenu = new EventEmitter();
   searchQuery$: Observable<string>;
   searchResults$: Observable<ArtistSearchResult[]>;
@@ -73,8 +83,8 @@ export class ToolbarComponent {
   error$: Observable<string>;
 
   constructor(
-    private store: Store
-
+    private store: Store,
+    public interceptorService: InterceptorService
   ) {
     this.searchQuery$ = store.select(fromArtists.selectSearchQuery).pipe(take(1))
     this.searchResults$ = store.select(fromArtists.selectSearchResults)
@@ -87,7 +97,7 @@ export class ToolbarComponent {
     }));
   }
 
-
+  ngOnInit(){}
 
 
 
