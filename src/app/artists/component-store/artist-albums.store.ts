@@ -11,7 +11,7 @@ export interface AlbumsState {
   responseIsEmpty?: boolean;
 
 }
-
+/*this store holds data for the artist album  view*/
 
 @Injectable()
 export class ArtistAlbumsStore extends ComponentStore<AlbumsState> {

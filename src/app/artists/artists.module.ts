@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ArtistsRoutingModule } from './artists-routing.module';
-import { MyArtistsCollectionPageComponent } from './containers/my-artists-collection-page.component';
 import { SearchArtistsPageComponent } from './containers/search-artists-page.component';
 import { SelectedArtistPageComponent } from './containers/selected-artist-page.component';
 import { ViewArtistPageComponent } from './containers/view-artist-page.component';
@@ -21,12 +20,13 @@ import { ArtistTopTracksComponent } from './components/artist-top-tracks.compone
 import { ArtistAlbumsComponent } from './components/artist-albums.component';
 import { ConvertDurationPipe } from './pipes/convert-duration.pipe';
 import { ConvertFansPipe } from './pipes/convert-fans.pipe';
+import { VimeModule } from '@vime/angular';
+import {InfiniteScrollModule} from "ngx-infinite-scroll";
 
 export const CONTAINERS =[
   SearchArtistsPageComponent,
   ViewArtistPageComponent,
   SelectedArtistPageComponent,
-  MyArtistsCollectionPageComponent
 ]
 export const COMPONENT =[
   ArtistDetailComponent,
@@ -37,18 +37,22 @@ export const COMPONENT =[
 ]
 
 @NgModule({
-  imports: [
-    CommonModule,
-    ArtistsRoutingModule,
-    MaterialModule,
-    StoreModule.forFeature(fromArtists.artistFeatureStateKey, fromArtists.reducers),
-    EffectsModule.forFeature([ArtistsEffects, CollectionEffects]),
-    NgxUiLoaderModule,
-    CoreModule
-  ],
+    imports: [
+        CommonModule,
+        ArtistsRoutingModule,
+        MaterialModule,
+        StoreModule.forFeature(fromArtists.artistFeatureStateKey, fromArtists.reducers),
+        EffectsModule.forFeature([ArtistsEffects, CollectionEffects]),
+        NgxUiLoaderModule,
+        CoreModule,
+        VimeModule,
+        InfiniteScrollModule,
+    ],
   declarations: [
     CONTAINERS, COMPONENT, ConvertDurationPipe, ConvertFansPipe,
   ],
-  exports: []
+    exports: [
+        SelectedArtistPageComponent
+    ]
 })
 export class ArtistsModule { }

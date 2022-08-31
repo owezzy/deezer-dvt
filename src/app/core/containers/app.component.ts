@@ -12,7 +12,8 @@ import {DomSanitizer} from "@angular/platform-browser";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+
 })
 export class AppComponent implements OnInit{
   title = 'deezer-dvt';
@@ -42,9 +43,6 @@ export class AppComponent implements OnInit{
 
 
   ngOnInit(): void {
-    this.search$ = this.dataService.searchArtists('jayz')
-    // this.searchArtist$ = this.dataService.searchMusic('jayz')
-    this.artist$ = this.dataService.getArtist('123')
   }
 
   closeSidenav() {

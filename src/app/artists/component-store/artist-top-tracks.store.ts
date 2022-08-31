@@ -12,6 +12,8 @@ export interface ArtistsTopTrackState{
 
 }
 
+/*this store holds data for the artist topTracks  view */
+
 @Injectable()
 export class ArtistTopTracksStore extends ComponentStore<ArtistsTopTrackState> {
   constructor(private apiDataService: ApiDataService) {

@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   Deezer_API:'https://api.deezer.com',
-  Deezer_AP2:'https://localhost:4200'
+  Deezer_API_LOCAL:'http://localhost:3000/api',
+  ngrx_logs: true,
 };
 
 /*

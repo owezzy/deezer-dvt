@@ -4,83 +4,44 @@ import {Artist, ArtistSearchResult} from "../models";
 @Component({
   selector: 'app-artist-preview',
   template: `
+<div class="grid">
+
     <a [routerLink]="['/artists', id]">
-      <mat-card>
-        <mat-card-title-group>
-          <img mat-card-sm-image *ngIf="thumbnail" [src]="thumbnail"/>
-          <mat-card-title>{{ title  }}</mat-card-title>
-          <mat-card-subtitle *ngIf="subtitle">{{
-            subtitle
-            }}</mat-card-subtitle>
-        </mat-card-title-group>
-        <mat-card-content>
+      <mat-card class="mat-elevation-z4 multiview">
+        <img mat-card-image *ngIf="thumbnail" [src]="thumbnail"/>
+        <mat-card-actions>
+          <span>{{ title  }}</span>
+          <span *ngIf="subtitle">{{subtitle}}</span>
           <strong>
             <p *ngIf="description">{{ description | convertFans}} fans</p>
           </strong>
-        </mat-card-content>
-        <!--        {{artistData | json}}-->
+        </mat-card-actions>
       </mat-card>
     </a>
+</div>
   `,
   styles: [
     `
-      :host {
-        display: flex;
-      }
 
-      :host a {
-        display: flex;
-      }
+      a{
+        text-decoration-line: none;
 
-      mat-card {
-        width: 400px;
-        margin: 15px;
-        display: block;
-        flex-flow: column;
-        justify-content: space-between;
       }
+      mat-card-actions{
+        margin: 0;
 
-      @media only screen and (max-width: 768px) {
-        mat-card {
-          margin: 15px 0 !important;
+        span {
+          overflow: hidden;
+          display: block;
+          height: 1.2em;
+          width: 100%;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          margin-bottom: 8px;
+          padding-bottom: 8px;
         }
       }
 
-      mat-card:hover {
-        box-shadow: 3px 3px 16px -2px rgba(0, 0, 0, 0.5);
-      }
-
-      mat-card-title {
-        margin-right: 10px;
-      }
-
-      mat-card-title-group {
-        margin: 0;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      img {
-        width: 60px;
-        min-width: 60px;
-        margin-left: 5px;
-      }
-
-      mat-card-content {
-        margin: 15px 0 0;
-      }
-
-      span {
-        display: inline-block;
-        font-size: 13px;
-      }
-
-      mat-card-footer {
-        padding: 0 25px 25px;
-      }
     `,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -104,8 +65,11 @@ export class ArtistPreviewComponent {
   }
 
   get description() {
-    return this.artistData.nb_fan;
-
+    if (Number(this.artistData.nb_fan) <= 0){
+      return "0"
+    } else {
+      return this.artistData.nb_fan;
+    }
   }
 
   get thumbnail(): string | boolean {

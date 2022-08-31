@@ -25,7 +25,7 @@ export const COMPONENTS = [
     MaterialModule,
     RouterModule,
     FormsModule,
-    NgxUiLoaderModule
+    NgxUiLoaderModule,
 
   ],
   declarations: [COMPONENTS],

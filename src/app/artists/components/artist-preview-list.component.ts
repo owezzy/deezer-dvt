@@ -4,15 +4,14 @@ import {Artist, ArtistSearchResult} from "../models";
 @Component({
   selector: 'app-artist-preview-list',
   template: `
+    <div class="grid">
     <app-artist-preview *ngFor="let artist of artists" [artistData]="artist"></app-artist-preview>
+    </div>
 
   `,
   styles: [
     `      :host {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 60px;
+
     }`
   ],
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -12,13 +12,14 @@ import { CoreModule } from './core';
 import {metaReducers, ROOT_REDUCERS} from "./Store";
 import {StoreRouterConnectingModule} from "@ngrx/router-store";
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment';
 import {EffectsModule} from "@ngrx/effects";
 import {RouterEffects} from "./core/effects";
 import {HttpInterceptorService} from "./core/services";
 import {NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, POSITION, SPINNER} from "ngx-ui-loader";
+import { VimeModule } from '@vime/angular';
+import {environment} from "../environments/environment";
 
-const primaryColour = '#ffd740';
+const primaryColour = '#e91e63';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   fgsColor: primaryColour,
@@ -31,7 +32,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   blur: 8,
   fgsSize: 144,
   bgsSize: 50,
-  bgsType: SPINNER.squareJellyBox, // background spinner type - Arts
+  bgsType: SPINNER.squareJellyBox, // background spinner type
   fgsType: SPINNER.threeStrings, // foreground spinner type - Http
   hasProgressBar: true,
   pbColor: primaryColour,
@@ -46,6 +47,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     ArtistsModule,
     BrowserAnimationsModule,
     MaterialModule,
+    VimeModule,
     StoreModule.forRoot(ROOT_REDUCERS, {
       metaReducers,
       runtimeChecks: {
@@ -60,7 +62,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({
       name: 'Deezer Music',
-      // logOnly: environment.production,
+      logOnly: environment.ngrx_logs,
     }),
     EffectsModule.forRoot([RouterEffects]),
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),

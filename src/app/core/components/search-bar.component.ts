@@ -1,38 +1,31 @@
-import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {SearchArtistPageActions} from "../../artists/actions";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Store} from "@ngrx/store";
 
 @Component({
   selector: 'app-search-bar',
   template: `
-<!--    <div fxLayout="row" fxLayoutAlign="center center" class="searchbar-container">-->
-<!--      <mat-icon color="accent" prefix>search</mat-icon>-->
-<!--      <mat-form-field color="accent" appearance="outline"-->
-<!--      >-->
-<!--        <input matInput-->
-<!--               [value]="query"-->
-<!--               (keyup)="onSearch($event)"-->
-<!--               class="search-control" type="text" #searchbar/>-->
-<!--      </mat-form-field>-->
-<!--    </div>-->
 
-<div class="search-wrapper" fxLayout="row" [ngClass]="{ 'focus': focused, 'has-input': input }" fxFlex>
-  <mat-icon class="search-icon">search</mat-icon>
-  <input type="search"
-         autocomplete="off"
-         spellcheck="false"
-         class="search-input"
-         [value]="query"
-         (keyup)="onSearch($event)"
-         placeholder="Search...">
-  <mat-card-footer
-  ><mat-error *ngIf="error">{{ error }}</mat-error></mat-card-footer>
-</div>
+    <div class="search-wrapper" fxLayout="row" fxFlex>
+      <mat-icon class="search-icon">search</mat-icon>
+      <input type="search"
+             autocomplete="off"
+             spellcheck="false"
+             class="search-input"
+             [(ngModel)]="query"
+             (keyup)="onSearch($event)"
+      placeholder="Search...">
+      <mat-card-footer
+      >
+        <mat-error *ngIf="error">{{ error }}</mat-error>
+      </mat-card-footer>
+    </div>
 
   `,
   styles: [
 
-`
+    `
       $height: 33px;
 
       :host {
@@ -105,14 +98,14 @@ import {Store} from "@ngrx/store";
         }
 
 
-    }
+      }
 
-    .mat-form-field {
-      color: #ffd740;
-      line-height: 24px;
-      border-radius: 13px;
+      .mat-form-field {
+        color: #ffd740;
+        line-height: 24px;
+        border-radius: 13px;
 
-    }
+      }
 
 
 
@@ -123,13 +116,44 @@ export class SearchBarComponent {
   @Input() searching = false;
   @Input() error = '';
   @Output() search = new EventEmitter<string>();
+  params = new Map<string, string>();
 
 
-  input: string;
-  focused: boolean;
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private store: Store,
+  ) {
+  }
 
   onSearch(data: KeyboardEvent) {
     this.search.emit((data.target as HTMLInputElement).value);
+  }
+
+  ngOnInit() {
+    this.route.queryParams.subscribe((queryParams) => {
+      if (queryParams['q'] === undefined) {
+        this.params.delete('q');
+        this.query =""
+      } else {
+        this.params.set('q', queryParams['q']);
+        const resourceName = 'artist'
+        const query = queryParams['q']
+        this.store.dispatch(SearchArtistPageActions.searchArtists({
+          query, resourceName
+        }));
+      }
+
+
+      // console.log(
+      //   '..........multiviewResourceService...URLSearchParams.....................',
+      //   this.params
+      // );
+      // console.log(
+      //   '..........searchbar...nativeElement.....................',
+      //   this.query)
+    });
+
   }
 
 
