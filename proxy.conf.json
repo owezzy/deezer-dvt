@@ -1,6 +1,6 @@
 {
   "/": {
-    "target": ["http://localhost:4200","https://api.deezer.com"],
+    "target": ["http://localhost:4200","http://localhost:3000"],
     "secure": false,
     "changeOrigin": true
 
