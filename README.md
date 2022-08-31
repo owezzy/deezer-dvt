@@ -3,10 +3,6 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
 
 
-<!-- [![Contributors][contributors-shield]][contributors-url] -->
-<!-- [![Forks][forks-shield]][forks-url] -->
-<!-- [![Stargazers][stars-shield]][stars-url] -->
-<!-- [![Issues][issues-shield]][issues-url] -->
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
@@ -78,11 +74,13 @@ User Requirements:
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+This application has been built with the following frameworks/libraries:
 
 
 * [![Angular][Angular.io]][Angular-url]
-
+* [![NgRx][NgRx.io]][NgRx-url]
+* [![Angular Material][angular material]][material-url]
+* [![Vime][Vime.js]][Vime-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -91,16 +89,13 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
 
 Make sure you have node v14 and above use [NVM](https://github.com/nvm-sh/nvm) to install and manage different versions of node.
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+Installing and setting up your app.
 
 
 1. Clone the repo
@@ -207,7 +202,7 @@ Project Link: [https://github.com/owezzy/deezer-dvt](https://github.com/owezzy/d
 [contributors-url]: https://github.com/owezzy/deezer-dvt/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
 [forks-url]: https://github.com/owezzy/deezer-dvt/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/owezzy/README.svg?style=for-the-badge
 [stars-url]: https://github.com/owezzy/deezer-dvt/stargazers
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
 [issues-url]: https://github.com/owezzy/deezer-dvt/issues
@@ -225,10 +220,10 @@ Project Link: [https://github.com/owezzy/deezer-dvt](https://github.com/owezzy/d
 
 [NgRx.io]: https://img.shields.io/badge/NgRx.io-000000?style=for-the-badge&logo=NgRx&logoColor=white
 [NgRx-url]: https://ngrx.io/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
+[Angular Material]: https://img.shields.io/badge/Material-20232A?style=for-the-badge&logo=materal&logoColor=61DAFB
+[material-url]: https://material.angular.io/
+[Vime.js]: https://img.shields.io/badge/Vime.js-35495E?style=for-the-badge&logo=vimedotjs&logoColor=4FC08D
+[Vime-url]: https://vimejs.com/
 [Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
 [Angular-url]: https://angular.io/
 [Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
