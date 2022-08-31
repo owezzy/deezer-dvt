@@ -21,7 +21,6 @@ export const reducer = createReducer(
     loading: true,
   })),
   on(
-    // ArtistsApiActions.searchSuccess,
     CollectionAPIActions.loadArtistsSuccess,
     (_state, { artists }) => ({
     loaded: true,

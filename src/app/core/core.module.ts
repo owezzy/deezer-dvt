@@ -7,7 +7,6 @@ import {RouterModule} from "@angular/router";
 import {LayoutComponent, NavItemComponent, SearchBarComponent, SidenavComponent, ToolbarComponent} from "./components";
 import {FormsModule} from "@angular/forms";
 import {NgxUiLoaderModule} from "ngx-ui-loader";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 export const COMPONENTS = [

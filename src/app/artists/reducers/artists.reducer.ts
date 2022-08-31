@@ -27,9 +27,6 @@ export const reducer = createReducer(
   on(ArtistsApiActions.searchSuccess,
     (state, {data}) => adapter.addMany(data, state)),
 
-  // on(CollectionAPIActions.loadArtistsSuccess,
-  //   (state, {data}) => adapter.addMany(data, state)),
-
   on(ArtistActions.loadArtist,
     (state, {artist}) => adapter.addOne(artist, state)),
 

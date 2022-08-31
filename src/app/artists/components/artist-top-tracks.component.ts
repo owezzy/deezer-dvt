@@ -63,10 +63,5 @@ export class ArtistTopTracksComponent implements OnInit {
     // }), share()).subscribe()
   }
 
-  onScroll() {
-    console.log('...........scrolled Base.....................');
-    // this.params.set('page_number', String(this.pageNo));
-    // this.genericBaseMultiviewService.queryParams.next(this.params);
-    // this.loadNextResource();
-  }
+
 }

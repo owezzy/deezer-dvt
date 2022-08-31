@@ -1,9 +1,8 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {Observable} from "rxjs";
 import {Store} from "@ngrx/store";
 import * as fromArtists from '../reducers';
 import {ArtistSearchResult} from "../models";
-import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-search-artists',
