@@ -238,9 +238,9 @@ Use this space to list resources you find helpful and would like to give credit 
 
 [NgRx.io]: https://img.shields.io/badge/NgRx.io-000000?style=for-the-badge&logo=NgRx&logoColor=white
 [NgRx-url]: https://ngrx.io/
-[Angular Material]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[Angular Material]: https://img.shields.io/badge/Material-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [material-url]: https://material.angular.io/
-[Vime.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
+[Vime.js]: https://img.shields.io/badge/Vime.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
 [Vime-url]: https://vimejs.com/
 [Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
 [Angular-url]: https://angular.io/
