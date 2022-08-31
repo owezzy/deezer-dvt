@@ -89,16 +89,13 @@ This application has been built with the following frameworks/libraries:
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
 
 Make sure you have node v14 and above use [NVM](https://github.com/nvm-sh/nvm) to install and manage different versions of node.
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+Installing and setting up your app.
 
 
 1. Clone the repo
