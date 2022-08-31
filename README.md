@@ -220,7 +220,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [contributors-url]: https://github.com/owezzy/deezer-dvt/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
 [forks-url]: https://github.com/owezzy/deezer-dvt/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/owezzy/README.svg?style=for-the-badge
 [stars-url]: https://github.com/owezzy/deezer-dvt/stargazers
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
 [issues-url]: https://github.com/owezzy/deezer-dvt/issues
