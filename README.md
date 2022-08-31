@@ -82,13 +82,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 
 * [![Angular][Angular.io]][Angular-url]
-* [![NgRx][NgRx.io]][NgRx-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
