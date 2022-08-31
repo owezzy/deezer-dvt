@@ -135,10 +135,11 @@ _Below is an example of how you can instruct your audience on installing and set
 
 [![Product Name Screen Shot][deezer-screenshot-artist-details-mobile]](https://main.d3tpb1r3missdl.amplifyapp.com/)
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+
+### CI-CD on main branch
+[![Product Name Screen Shot][amplify_CI_CD]](src/assets/screenshots/amplify_CI_CD.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- ROADMAP -->
@@ -203,25 +204,26 @@ Project Link: [https://github.com/owezzy/deezer-dvt](https://github.com/owezzy/d
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
+[contributors-url]: https://github.com/owezzy/deezer-dvt/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
+[forks-url]: https://github.com/owezzy/deezer-dvt/network/members
 [stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
+[stars-url]: https://github.com/owezzy/deezer-dvt/stargazers
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
+[issues-url]: https://github.com/owezzy/deezer-dvt/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[license-url]: https://github.com/owezzy/deezer-dvt/blob/main/LICENCE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/owezzy
 [deezer-screenshot-search-artists-web]: src/assets/screenshots/artists_search_web.png
 [deezer-screenshot-search-artists-mobile]: src/assets/screenshots/artists_search_mobile.png
 [deezer-screenshot-artist-details-web]: src/assets/screenshots/artist_detail_web.png
 [deezer-screenshot-artist-details-mobile]: src/assets/screenshots/artist_detail_mobile.png
+[amplify_CI_CD]: src/assets/screenshots/amplify_CI_CD.png
 [Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
 [Angular-url]: https://angular.io/
 
-[NgRx.io]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[NgRx.io]: https://img.shields.io/badge/NgRx.io-000000?style=for-the-badge&logo=NgRx&logoColor=white
 [NgRx-url]: https://ngrx.io/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
