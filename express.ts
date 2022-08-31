@@ -46,9 +46,7 @@ app.use(cors(corsOptions));
 app.use(proxyCors);
 app.use(helmet.contentSecurityPolicy.getDefaultDirectives)
 app.use(express.static(path.join(view)));
-app.get('/', function (req,res) {
-  res.sendFile(path + "index.html");
-});
+
 
 // set port, listen for requests
 const PORT = 3000;
