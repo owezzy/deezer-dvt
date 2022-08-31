@@ -17,7 +17,7 @@ import {RouterEffects} from "./core/effects";
 import {HttpInterceptorService} from "./core/services";
 import {NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, POSITION, SPINNER} from "ngx-ui-loader";
 import { VimeModule } from '@vime/angular';
-import {environment} from "../environments/environment.prod";
+import {environment} from "../environments/environment";
 
 const primaryColour = '#e91e63';
 
@@ -62,7 +62,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({
       name: 'Deezer Music',
-      logOnly: environment.production,
+      logOnly: environment.ngrx_logs,
     }),
     EffectsModule.forRoot([RouterEffects]),
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
