@@ -20,8 +20,8 @@ export class ApiDataService {
 
   searchArtists(name: string): Observable<ArtistSearchResult> {
     // const searchArtist = this.urlCors+environment.Deezer_API
-    const searchArtist = environment.Deezer_API
-    // const searchArtist = environment.Deezer_API_LOCAL
+    // const searchArtist = environment.Deezer_API
+    const searchArtist = environment.Deezer_API_LOCAL
     const options = new HttpParams()
       .set('q', name)
     return this.httpClient.get<ArtistSearchResult>(`${searchArtist}/search/artist`,{
@@ -36,14 +36,16 @@ export class ApiDataService {
   }
 
   getArtistAlbums(id: string):Observable<Album[]>{
-    const albumsUrl = this.urlCors+environment.Deezer_API
+    // const albumsUrl = this.urlCors+environment.Deezer_API
     // const albumsUrl = environment.Deezer_API
+    const albumsUrl = environment.Deezer_API_LOCAL
     return this.httpClient.get<Album[]>(`${albumsUrl}/artist/${id}/albums`)
   }
 
   getArtistTopTracks(id: string):Observable<ArtistTopTrack[]>{
-    const artistTopTracks = this.urlCors+environment.Deezer_API
+    // const artistTopTracks = this.urlCors+environment.Deezer_API
     // const artistTopTracks = environment.Deezer_API
+    const artistTopTracks = environment.Deezer_API_LOCAL
     return this.httpClient.get<{data: ArtistTopTrack[]}>(`${artistTopTracks}/artist/${id}/top?index=0&limit=5`)
       .pipe(map((res) => <any>res.data))
 

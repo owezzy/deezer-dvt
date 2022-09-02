@@ -35,6 +35,7 @@
               "src/styles.scss"
             ],
             "scripts": [],
+
             "allowedCommonJsDependencies": [
               "simplebar",
               "highlight.js"
@@ -76,14 +77,16 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "proxyConfig": "src/proxy.conf.js"
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
               "browserTarget": "deezer-dvt:build:production"
             },
             "development": {
-              "browserTarget": "deezer-dvt:build:development"
+              "browserTarget": "deezer-dvt:build:development",
+              "proxyConfig": "src/proxy.conf.json"
+
             }
           },
           "defaultConfiguration": "development"
