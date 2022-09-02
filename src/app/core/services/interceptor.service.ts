@@ -17,6 +17,10 @@ const httpStatusCodesObject: HttpStatusCode = {
     message: "Unknown Error",
     uiMessage: "Please Click the Enable Cors Button on the Search Bar to fix this problem"
   }],
+  403: [{
+    message: "Unknown Error",
+    uiMessage: "Please Click the Enable Cors Button on the Search Bar to fix this problem"
+  }],
   200: [{message: "OK"}]
 
 }
