@@ -7,8 +7,9 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser")
 const logger = require("morgan")
 const cors = require("cors");
+const contentSecurityPolicy = require("helmet-csp");
 
-const view = __dirname + '/dist/deezer-dvt/';
+const view = __dirname + '/dist/deezer-dvt';
 
 
 
@@ -25,6 +26,17 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser())
+
+app.use(
+  contentSecurityPolicy({
+    useDefaults: true,
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'none'"],
+    },
+    reportOnly: false,
+  })
+);
 app.use('/api',function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET , PUT , POST , DELETE" , "OPTIONS");
@@ -46,7 +58,6 @@ app.use(cors(corsOptions));
 app.use(proxyCors);
 app.use(helmet.contentSecurityPolicy.getDefaultDirectives)
 app.use(express.static(path.join(view)));
-
 
 // set port, listen for requests
 const PORT = 3000;
