@@ -5,7 +5,6 @@ const {createProxyMiddleware} = require("http-proxy-middleware");
 const express = require("express");
 const router = express.Router()
 const bodyParser = require("body-parser");
-const cookieParser = require("cookie-parser")
 const logger = require("morgan")
 const cors = require("cors");
 const contentSecurityPolicy = require("helmet-csp");
@@ -26,7 +25,6 @@ const app = express();
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser())
 
 app.use(
   contentSecurityPolicy({
@@ -59,7 +57,7 @@ const proxyConfig =  {
   }
 };
 
-const proxyCors = createProxyMiddleware(proxyConfig)
+const proxyCors = createProxyMiddleware('/',proxyConfig)
 
 app.use(cors(corsOptions));
 app.use(proxyCors);
