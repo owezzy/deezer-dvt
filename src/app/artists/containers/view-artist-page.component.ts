@@ -27,7 +27,6 @@ export class ViewArtistPageComponent implements OnInit {
 
   ngOnDestroy() {
     this.actionsSubscription.unsubscribe();
-
   }
 
   ngOnInit(): void {

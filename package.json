@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
-    "start-api": "nodemon express.ts",
-    "build-app-api": "ng build && nodemon express.ts",
+    "start-api":  "nodemon express.ts",
+    "build-app-api": "ng build  --configuration development && nodemon express.ts",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -35,6 +35,7 @@
     "cors": "^2.8.5",
     "express": "^4.18.1",
     "helmet": "^6.0.0",
+    "helmet-csp": "^3.4.0",
     "http-proxy-middleware": "^2.0.6",
     "morgan": "^1.10.0",
     "ngx-infinite-scroll": "^14.0.0",
