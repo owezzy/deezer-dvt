@@ -23,7 +23,7 @@ export class ApiDataService {
     // const searchArtist = environment.Deezer_API
     // const searchArtist = environment.Deezer_API_LOCAL
     const searchArtist = environment.HEROKU_API
-    // const searchArtist = environment.AWS_API_ENDPOINT
+    // const searchArtist = environment.AWS_API_ENDPOINT :TODO W.I.P
     const options = new HttpParams()
       .set('q', name)
     return this.httpClient.get<ArtistSearchResult>(`${searchArtist}/search/artist`,{
@@ -43,7 +43,7 @@ export class ApiDataService {
     // const albumsUrl = environment.Deezer_API
     // const albumsUrl = environment.Deezer_API_LOCAL
     const albumsUrl = environment.HEROKU_API
-    // const albumsUrl = environment.AWS_API_ENDPOINT
+    // const albumsUrl = environment.AWS_API_ENDPOINT :TODO W.I.P
     return this.httpClient.get<Album[]>(`${albumsUrl}/artist/${id}/albums`)
   }
 
@@ -52,7 +52,7 @@ export class ApiDataService {
     // const artistTopTracks = environment.Deezer_API
     // const artistTopTracks = environment.Deezer_API_LOCAL
     const artistTopTracks = environment.HEROKU_API
-    // const artistTopTracks = environment.AWS_API_ENDPOINT
+    // const artistTopTracks = environment.AWS_API_ENDPOINT :TODO W.I.P
     return this.httpClient.get<{data: ArtistTopTrack[]}>(`${artistTopTracks}/artist/${id}/top?index=0&limit=5`)
       .pipe(map((res) => <any>res.data))
 
