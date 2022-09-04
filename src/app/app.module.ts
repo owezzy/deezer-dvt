@@ -3,21 +3,27 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './core/containers/app.component';
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {ArtistsModule} from "./artists/artists.module";
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { ArtistsModule } from './artists/artists.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
-import {MaterialModule} from "./material";
+import { MaterialModule } from './material';
 import { CoreModule } from './core';
-import {metaReducers, ROOT_REDUCERS} from "./Store";
-import {StoreRouterConnectingModule} from "@ngrx/router-store";
+import { metaReducers, ROOT_REDUCERS } from './Store';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import {EffectsModule} from "@ngrx/effects";
-import {RouterEffects} from "./core/effects";
-import {HttpInterceptorService} from "./core/services";
-import {NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, POSITION, SPINNER} from "ngx-ui-loader";
+import { EffectsModule } from '@ngrx/effects';
+import { RouterEffects } from './core/effects';
+import { HttpInterceptorService } from './core/services';
+import {
+  NgxUiLoaderConfig,
+  NgxUiLoaderHttpModule,
+  NgxUiLoaderModule,
+  POSITION,
+  SPINNER,
+} from 'ngx-ui-loader';
 import { VimeModule } from '@vime/angular';
-import {environment} from "../environments/environment";
+import { environment } from '../environments/environment';
 
 const primaryColour = '#e91e63';
 
@@ -57,7 +63,6 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
         strictActionWithinNgZone: true,
         strictActionTypeUniqueness: true,
       },
-
     }),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({
@@ -68,15 +73,17 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgxUiLoaderHttpModule.forRoot({
       showForeground: true,
-      exclude: [
-        'http://localhost:4200/'
-
-      ]
+      exclude: ['http://localhost:4200/'],
     }),
     CoreModule,
   ],
-  providers: [        { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true,
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
