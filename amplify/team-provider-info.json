@@ -1,0 +1,27 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplify9301476949344-staging-00030-authRole",
+      "UnauthRoleArn": "arn:aws:iam::477472650766:role/amplify-amplify9301476949344-staging-00030-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::477472650766:role/amplify-amplify9301476949344-staging-00030-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-amplify9301476949344-staging-00030-deployment",
+      "UnauthRoleName": "amplify-amplify9301476949344-staging-00030-unauthRole",
+      "StackName": "amplify-amplify9301476949344-staging-00030",
+      "StackId": "arn:aws:cloudformation:eu-west-2:477472650766:stack/amplify-amplify9301476949344-staging-00030/6cdfefc0-2b1b-11ed-bfc1-0ad2fdcd66f4",
+      "AmplifyAppId": "d3tpb1r3missdl"
+    },
+    "categories": {
+      "function": {
+        "dvtDeezerProxy": {
+          "deploymentBucketName": "amplify-amplify9301476949344-staging-00030-deployment",
+          "s3Key": "amplify-builds/dvtDeezerProxy-76336a666332456b3550-build.zip"
+        },
+        "dvtdeezerapi": {
+          "deploymentBucketName": "amplify-amplify9301476949344-staging-00030-deployment",
+          "s3Key": "amplify-builds/dvtdeezerapi-3047707352345a785845-build.zip"
+        }
+      }
+    }
+  }
+}
