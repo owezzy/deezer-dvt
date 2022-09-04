@@ -30,16 +30,9 @@
               "src/favicon.ico",
               "src/favicon-16x16.png"
             ],
-            "styles": [
-              "deezer-theme.scss",
-              "src/styles.scss"
-            ],
+            "styles": ["deezer-theme.scss", "src/styles.scss"],
             "scripts": [],
-
-            "allowedCommonJsDependencies": [
-              "simplebar",
-              "highlight.js"
-            ]
+            "allowedCommonJsDependencies": ["simplebar", "highlight.js"]
           },
           "configurations": {
             "production": {
@@ -86,7 +79,6 @@
             "development": {
               "browserTarget": "deezer-dvt:build:development",
               "proxyConfig": "src/proxy.conf.json"
-
             }
           },
           "defaultConfiguration": "development"
@@ -105,23 +97,24 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+          }
         }
       }
     }
   },
   "cli": {
-    "schematicCollections": [
-      "@ngrx/schematics"
-    ]
+    "schematicCollections": ["@ngrx/schematics"]
   }
 }

@@ -1,0 +1,14 @@
+package.json
+package-lock.json
+yarn.lock
+dist
+.angulardoc.json
+.vscode/*
+coverage
+coverage-e2e
+cypress/videos
+cypress/screenshots
+cypress/fixtures/images
+.husky
+.prettierignore
+.gitignore
