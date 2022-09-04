@@ -1,5 +1,5 @@
 # Deezer-Dvt
-
+<a name="readme-top"></a>
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
 
 
@@ -81,6 +81,7 @@ This application has been built with the following frameworks/libraries:
 * [![NgRx][NgRx.io]][NgRx-url]
 * [![Angular Material][angular material]][material-url]
 * [![Vime][Vime.js]][Vime-url]
+* [![ExpressJs][Express.js]][Express-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -92,7 +93,7 @@ This application has been built with the following frameworks/libraries:
 ### Prerequisites
 
 Make sure you have node v14 and above use [NVM](https://github.com/nvm-sh/nvm) to install and manage different versions of node.
-
+Current production api is deployed at Heroku from this [Repository](https://github.com/owezzy/deezer-proxy)
 ### Installation
 
 Installing and setting up your app.
@@ -142,6 +143,8 @@ Installing and setting up your app.
 
 - [x] Add Artists Search Page
 - [x] Add Artist Detail Page
+- [x] Deploy Proxy to HEROKU (used in demo link)
+- [ ] Deploy backend to AWS Amplify backend using Lambda function and API Gateway services
 - [ ] Add more resources
 
 
@@ -224,6 +227,8 @@ Project Link: [https://github.com/owezzy/deezer-dvt](https://github.com/owezzy/d
 [material-url]: https://material.angular.io/
 [Vime.js]: https://img.shields.io/badge/Vime.js-35495E?style=for-the-badge&logo=vimedotjs&logoColor=4FC08D
 [Vime-url]: https://vimejs.com/
+[Express.js]: https://img.shields.io/badge/Express.js-35495E?style=for-the-badge&logo=vimedotjs&logoColor=4FC08D
+[Express-url]: https://expressjs.com/
 [Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
 [Angular-url]: https://angular.io/
 [Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
@@ -234,20 +239,3 @@ Project Link: [https://github.com/owezzy/deezer-dvt](https://github.com/owezzy/d
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

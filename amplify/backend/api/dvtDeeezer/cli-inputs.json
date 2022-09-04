@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/artists": {
+      "name": "/artists",
+      "lambdaFunction": "dvtdeezerapi",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
