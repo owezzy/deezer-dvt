@@ -4,10 +4,12 @@
 
 export const environment = {
   production: false,
-  Deezer_API:'https://api.deezer.com',
-  Deezer_API_LOCAL:'http://localhost:3000/api',
+  Deezer_API: 'https://api.deezer.com',
+  Deezer_API_LOCAL: 'http://localhost:3000/api',
   HEROKU_API: 'https://dvt-deezer-proxy.herokuapp.com/api',
-  AWS_API_ENDPOINT: 'https://z6pd7bhx5qawqgv553akbxgwae0jmkyg.lambda-url.eu-west-2.on.aws',
+  AWS_API_ENDPOINT:
+    'https://z6pd7bhx5qawqgv553akbxgwae0jmkyg.lambda-url.eu-west-2.on.aws',
+  AWS_EC2_API: 'http://ec2-13-41-78-85.eu-west-2.compute.amazonaws.com:3000',
   ngrx_logs: true,
 };
 
